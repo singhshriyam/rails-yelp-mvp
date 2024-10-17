@@ -1,13 +1,44 @@
-# 1. Clean the database 🗑️
-puts "Cleaning database..."
+# db/seeds.rb
+
+puts "Cleaning up database..."
 Restaurant.destroy_all
+puts "Database cleaned!"
 
-# 2. Create the instances 🏗️
 puts "Creating restaurants..."
-Restaurant.create!(name: "Dishoom", address: "7 Boundary St, London E2 7JE", phone_number: 33678979, category: "Indian")
-puts "Created Dishoom"
-Restaurant.create!(name: "Pizza East", address: "56A Shoreditch High St, London E1 6PQ", phone_number: 6453247, category: "Italian")
-puts "Created Pizza East"
 
-# 3. Display a message 🎉
-puts "Finished! Created #{Restaurant.count} restaurants."
+Restaurant.create!(
+  name: "Le Petit Chef",
+  address: "123 Main St, Cologne, Germany",
+  phone_number: "+49 221 1234567",
+  category: "french"
+)
+
+Restaurant.create!(
+  name: "La Dolce Vita",
+  address: "456 High St, Cologne, Germany",
+  phone_number: "+49 221 7654321",
+  category: "italian"
+)
+
+Restaurant.create!(
+  name: "Sakura",
+  address: "789 Elm St, Cologne, Germany",
+  phone_number: "+49 221 9876543",
+  category: "japanese"
+)
+
+Restaurant.create!(
+  name: "Wok 'n Roll",
+  address: "321 Oak St, Cologne, Germany",
+  phone_number: "+49 221 6543210",
+  category: "chinese"
+)
+
+Restaurant.create!(
+  name: "Brussels Bistro",
+  address: "987 Maple St, Cologne, Germany",
+  phone_number: "+49 221 4321098",
+  category: "belgian"
+)
+
+puts "Finished creating restaurants!"
