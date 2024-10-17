@@ -22,11 +22,17 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def update
     @restaurant.update(restaurant_params)
     redirect_to @restaurant
+  end
+
+  def destroy
+    @restaurant.destroy!
+    redirect_to restaurants_url, notice: 'Restaurant was successfully destroyed.', status: :see_other
   end
 
   private
